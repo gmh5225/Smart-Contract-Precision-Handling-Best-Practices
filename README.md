@@ -11,9 +11,9 @@ uint256 private constant PRECISION = 1e24;
 Always multiply before dividing to prevent precision loss:
 ```solidity
 // Incorrect - Precision loss due to early division
-uint256 result = (amount*rate) / precision;
+uint256 result = (amount * rate) / precision;
 // Correct - Multiply by precision factor first, then divide
-uint256 result = (amount*rate*PRECISION) / (precision*PRECISION);
+uint256 result = (amount * rate*PRECISION) / (precision * PRECISION);
 ```
 
 
@@ -21,6 +21,6 @@ uint256 result = (amount*rate*PRECISION) / (precision*PRECISION);
 Apply the same precision calculation pattern throughout the contract:
 ```solidity
 // Reward calculation example
-uint256 rewardPerShare = (reward PRECISION PRECISION) / (totalStaked PRECISION);
-uint256 pending = (userStakeAmount accRewardPerShare PRECISION) / (PRECISION PRECISION);
+uint256 rewardPerShare = (reward * PRECISION * PRECISION) / (totalStaked * PRECISION);
+uint256 pending = (userStakeAmount * accRewardPerShare * PRECISION) / (PRECISION * PRECISION);
 ```
