@@ -13,7 +13,7 @@ Always multiply before dividing to prevent precision loss:
 // Incorrect - Precision loss due to early division
 uint256 result = (amount * rate) / precision;
 // Correct - Multiply by precision factor first, then divide
-uint256 result = (amount * rate*PRECISION) / (precision * PRECISION);
+uint256 result = (amount * rate * PRECISION) / (precision * PRECISION);
 ```
 
 
