@@ -17,7 +17,7 @@ uint256 result = (amount * rate*PRECISION) / (precision * PRECISION);
 ```
 
 
-### 3. Maintain Consistent Precision Handling
+## Maintain Consistent Precision Handling
 Apply the same precision calculation pattern throughout the contract:
 ```solidity
 // Reward calculation example
